@@ -22,4 +22,8 @@ describe("npm package metadata", () => {
     expect(packageJson.files).not.toContain("src/");
     expect(packageJson.openclaw.extensions).toEqual(["./dist/index.mjs"]);
   });
+
+  it("keeps AI SDK dependency compatible with host applications on AI SDK 6", () => {
+    expect(packageJson.dependencies.ai).toBe("^6.0.14");
+  });
 });
